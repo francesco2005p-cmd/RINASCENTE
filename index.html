@@ -30,7 +30,7 @@
   </style>
 </head>
 <body>
-  <div id="modeBadge" class="mode-badge" hidden>Modalità demo · database non collegato</div>
+  
   <div class="page">
     <nav class="nav"><div class="wrap nav-inner"><a class="brand" href="#top">RINASCENTE</a><div class="menu"><a href="#evento">Evento</a><a href="#lineup">DJ Line Up</a><a href="#partner">Partner</a><a href="#sponsor">Sponsor</a><a class="nav-cta" href="#registrazione">Registrati</a></div></div></nav>
     <main id="top">
@@ -40,13 +40,91 @@
       <section id="lineup"><div class="wrap"><div class="section-head"><h2 class="section-title">DJ Line Up</h2></div><div class="section-kicker">Line up in aggiornamento</div><div class="lineup-grid"><article class="dj-card"><span class="dj-num">01</span><h3 class="dj-name">DJ Name</h3><div class="dj-note">Opening Set</div></article><article class="dj-card"><span class="dj-num">02</span><h3 class="dj-name">DJ Name</h3><div class="dj-note">Main Set</div></article><article class="dj-card"><span class="dj-num">03</span><h3 class="dj-name">DJ Name</h3><div class="dj-note">Closing Set</div></article></div></div></section>
       <section id="partner"><div class="wrap"><div class="section-head"><h2 class="section-title">Main Partner</h2></div><div class="section-kicker">Gli organizzatori dell'evento</div><div class="logos partners"><div class="logo-box">Logo Partner 01</div><div class="logo-box">Logo Partner 02</div><div class="logo-box">Logo Partner 03</div><div class="logo-box">Logo Partner 04</div></div></div></section>
       <section id="sponsor"><div class="wrap"><div class="section-head"><h2 class="section-title">Sponsor</h2></div><div class="section-kicker">Partner e sponsor della Shopping Night</div><div class="logos sponsors"><div class="logo-box">Sponsor 01</div><div class="logo-box">Sponsor 02</div><div class="logo-box">Sponsor 03</div><div class="logo-box">Sponsor 04</div><div class="logo-box">Sponsor 05</div><div class="logo-box">Sponsor 06</div><div class="logo-box">Sponsor 07</div><div class="logo-box">Sponsor 08</div><div class="logo-box">Sponsor 09</div><div class="logo-box">Sponsor 10</div></div></div></section>
-      <section class="registration" id="registrazione"><div class="wrap"><div class="registration-shell"><div class="registration-copy"><div><div class="small">Giovedì 8 ottobre · Rinascente</div><h2>Registrati<br>alla Night</h2><p>Compila il form per prenotare il tuo ingresso. Al termine riceverai un codice registrazione personale.</p><div id="availabilityBadge" class="availability">Registrazioni</div><div id="spotsText" class="spots">Verifica disponibilità…</div></div><div class="small">Dress code Smart Casual · Ingresso soggetto a disponibilità</div></div><div class="form-wrap"><form id="registrationForm" novalidate><div class="field"><label for="name">Nome *</label><input id="name" name="name" autocomplete="given-name" maxlength="80" required /></div><div class="field"><label for="surname">Cognome *</label><input id="surname" name="surname" autocomplete="family-name" maxlength="80" required /></div><div class="field"><label for="email">Email *</label><input id="email" name="email" type="email" autocomplete="email" maxlength="160" required /></div><div class="field"><label for="phone">Telefono</label><input id="phone" name="phone" type="tel" autocomplete="tel" maxlength="40" /></div><div class="field"><label for="guests">Numero partecipanti *</label><select id="guests" name="guests" required><option value="">Seleziona</option><option value="1">1 persona</option><option value="2">2 persone</option><option value="3">3 persone</option><option value="4">4 persone</option></select></div><div class="field"><label for="age">Fascia d'età</label><select id="age" name="age"><option value="">Seleziona</option><option>18–24</option><option>25–34</option><option>35–44</option><option>45–54</option><option>55+</option></select></div><div class="field full"><label for="notes">Note</label><textarea id="notes" name="notes" maxlength="600" placeholder="Eventuali note o richieste"></textarea></div><div class="honeypot" aria-hidden="true"><label for="website">Website</label><input id="website" name="website" tabindex="-1" autocomplete="off" /></div><label class="check"><input id="privacy" type="checkbox" required /><span>Ho letto l'<a href="privacy.html" target="_blank" rel="noopener">informativa privacy</a> e acconsento al trattamento dei dati per la gestione della registrazione all'evento. *</span></label><button id="submitRegistration" class="submit" type="submit">Invia registrazione</button><div id="formStatus" class="status" role="status" aria-live="polite"></div><div id="registrationSuccess" class="success-box" hidden><div class="label">Registrazione confermata</div><h3>Conserva il tuo codice</h3><div id="successCode" class="code">RSN-XXXXXXXXXX</div><p>Il codice identifica la tua registrazione e potrà essere utilizzato al desk di ingresso. Non contiene i tuoi dati personali.</p></div><div class="micro">I dati della registrazione vengono utilizzati esclusivamente per la gestione dell'evento. La dashboard organizzatori è protetta da autenticazione e le registrazioni non sono consultabili dal sito pubblico.</div></form></div></div></div></section>
+      <section class="registration" id="registrazione"><div class="wrap"><div class="registration-shell"><div class="registration-copy"><div><div class="small">Giovedì 8 ottobre · Rinascente</div><h2>Registrati<br>alla Night</h2><p>Compila il form per prenotare il tuo ingresso. La registrazione viene salvata direttamente nel Google Modulo ufficiale dell'evento.</p><div class="availability">Registrazioni aperte</div></div><div class="small">Dress code Smart Casual · Ingresso soggetto a disponibilità</div></div><div class="form-wrap">
+      <iframe name="googleFormTarget" id="googleFormTarget" title="Invio registrazione" hidden></iframe>
+      <form id="registrationForm" action="https://docs.google.com/forms/d/e/1FAIpQLSeFUSIjm-koq5NChcSAC196CgjdzcCVpRTNEeeFZ922oqERYg/formResponse" method="POST" target="googleFormTarget" novalidate>
+        <div class="field"><label for="name">Nome *</label><input id="name" name="entry.1352401967" autocomplete="given-name" maxlength="80" required /></div>
+        <div class="field"><label for="surname">Cognome *</label><input id="surname" name="entry.1614632850" autocomplete="family-name" maxlength="80" required /></div>
+        <div class="field"><label for="birthdate">Data di nascita *</label><input id="birthdate" name="entry.1946050331" type="date" autocomplete="bday" required /></div>
+        <div class="field"><label for="phone">Telefono *</label><input id="phone" name="entry.887439823" type="tel" autocomplete="tel" maxlength="40" required /></div>
+        <div class="field"><label for="email">Email *</label><input id="email" name="entry.890832068" type="email" autocomplete="email" maxlength="160" required /></div>
+        <div class="field"><label for="guests">Numero partecipanti *</label><select id="guests" name="entry.493942246" required><option value="">Seleziona</option><option value="1">1 persona</option><option value="2">2 persone</option><option value="3">3 persone</option><option value="4">4 persone</option><option value="5">5 persone</option></select></div>
+        <input type="hidden" id="birthYear" name="entry.1946050331_year" />
+        <input type="hidden" id="birthMonth" name="entry.1946050331_month" />
+        <input type="hidden" id="birthDay" name="entry.1946050331_day" />
+        <div class="honeypot" aria-hidden="true"><label for="website">Website</label><input id="website" tabindex="-1" autocomplete="off" /></div>
+        <label class="check"><input id="privacy" name="entry.2078780319" type="checkbox" value="Opzione 1" required /><span>Ho letto l'<a href="privacy.html" target="_blank" rel="noopener">informativa privacy</a> e acconsento al trattamento dei dati per la gestione della registrazione all'evento. *</span></label>
+        <button id="submitRegistration" class="submit" type="submit">Invia registrazione</button>
+        <div id="formStatus" class="status" role="status" aria-live="polite"></div>
+        <div id="registrationSuccess" class="success-box" hidden><div class="label">Registrazione inviata</div><h3>Ci vediamo alla Shopping Night</h3><p>I tuoi dati sono stati trasmessi al Google Modulo ufficiale dell'evento. Puoi chiudere questa pagina.</p></div>
+        <div class="micro">Le risposte vengono archiviate nel Google Modulo collegato all'account dell'organizzazione. In caso di problemi puoi <a href="https://docs.google.com/forms/d/e/1FAIpQLSeFUSIjm-koq5NChcSAC196CgjdzcCVpRTNEeeFZ922oqERYg/viewform" target="_blank" rel="noopener">aprire il modulo Google direttamente</a>.</div>
+      </form></div></div></div></section>
     </main>
-    <footer><div class="wrap footer-inner"><div class="footer-title">RINASCENTE · SHOPPING NIGHT</div><div class="footer-note">Giovedì 8 ottobre 2026 · 20:00 / 20:30<br>Open Wine · DJ Set · Smart Casual<a class="admin-link" href="admin/">Accesso organizzatori</a></div></div></footer>
+    <footer><div class="wrap footer-inner"><div class="footer-title">RINASCENTE · SHOPPING NIGHT</div><div class="footer-note">Giovedì 8 ottobre 2026 · 20:00 / 20:30<br>Open Wine · DJ Set · Smart Casual</div></div></footer>
   </div>
   <a class="mobile-cta" href="#registrazione">Registrati all'evento</a>
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="assets/config.js"></script>
-  <script src="assets/app.js"></script>
+  <script>
+    (() => {
+      const form = document.getElementById('registrationForm');
+      const iframe = document.getElementById('googleFormTarget');
+      const submit = document.getElementById('submitRegistration');
+      const status = document.getElementById('formStatus');
+      const success = document.getElementById('registrationSuccess');
+      const website = document.getElementById('website');
+      const birthdate = document.getElementById('birthdate');
+      const birthYear = document.getElementById('birthYear');
+      const birthMonth = document.getElementById('birthMonth');
+      const birthDay = document.getElementById('birthDay');
+      let waitingForGoogle = false;
+
+      function setDateParts() {
+        const value = birthdate.value;
+        if (!value) { birthYear.value = birthMonth.value = birthDay.value = ''; return; }
+        const [y,m,d] = value.split('-');
+        birthYear.value = y || '';
+        birthMonth.value = m ? String(Number(m)) : '';
+        birthDay.value = d ? String(Number(d)) : '';
+      }
+
+      birthdate.addEventListener('change', setDateParts);
+
+      form.addEventListener('submit', (event) => {
+        status.className = 'status';
+        status.textContent = '';
+        success.hidden = true;
+
+        if (website.value) {
+          event.preventDefault();
+          status.className = 'status err';
+          status.textContent = 'Invio non riuscito. Riprova.';
+          return;
+        }
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          form.reportValidity();
+          return;
+        }
+
+        setDateParts();
+        waitingForGoogle = true;
+        submit.disabled = true;
+        submit.textContent = 'Invio in corso…';
+        status.textContent = 'Sto inviando la registrazione…';
+      });
+
+      iframe.addEventListener('load', () => {
+        if (!waitingForGoogle) return;
+        waitingForGoogle = false;
+        submit.disabled = false;
+        submit.textContent = 'Invia registrazione';
+        status.className = 'status ok';
+        status.textContent = 'Registrazione inviata correttamente.';
+        success.hidden = false;
+        form.reset();
+        birthYear.value = birthMonth.value = birthDay.value = '';
+        success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      });
+    })();
+  </script>
 </body>
 </html>
