@@ -88,9 +88,9 @@ button,input,textarea,select{font:inherit}
 .reg-copy .mail{font-size:12px;line-height:1.5;text-transform:uppercase;letter-spacing:.08em;border-top:1px solid rgba(255,255,255,.4);padding-top:18px}
 .form-wrap{padding:44px}
 form{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.field{display:grid;gap:8px}.field.full{grid-column:1/-1}.field input::placeholder{font-size:15px}.field.full input::placeholder{font-size:14px}
+.field{display:grid;gap:8px;align-content:start;align-self:start}.field.full{grid-column:1/-1}.field input::placeholder{font-size:15px}.field.full input::placeholder{font-size:14px}
 label{font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.1em}.optional{font-weight:500;text-transform:none;letter-spacing:0;color:var(--muted);font-size:10px}.email-hint{min-height:16px;font-size:11px;line-height:1.35;color:var(--muted);text-transform:none;letter-spacing:0}.email-hint.ok{color:#24633b;font-weight:700}.email-hint.warn{color:#9a5b00;font-weight:700}.email-hint.err{color:#a00000;font-weight:700}
-input,textarea,select{width:100%;min-height:52px;border:1.5px solid #111;background:#fff;color:#111;-webkit-text-fill-color:#111;color-scheme:light;padding:13px 14px;outline:none;border-radius:0}
+input,textarea,select{width:100%;height:52px;min-height:52px;border:1.5px solid #111;background:#fff;color:#111;-webkit-text-fill-color:#111;color-scheme:light;padding:13px 14px;outline:none;border-radius:0}
 input::placeholder,textarea::placeholder{color:#777;-webkit-text-fill-color:#777;opacity:1}
 input[type="date"]{color:#111!important;-webkit-text-fill-color:#111!important;color-scheme:light!important}
 input[type="date"]::-webkit-datetime-edit,
@@ -441,10 +441,10 @@ footer{background:var(--teal);color:#fff;padding:38px 0 110px}
           <div class="field"><label for="surname">Cognome *</label><input id="surname" name="entry.1614632850" autocomplete="family-name" maxlength="80" required></div>
           <div class="field"><label for="birthdate">Data di nascita *</label><input id="birthdate" name="entry.1946050331" type="date" autocomplete="bday" required></div>
           <div class="field"><label for="city">Città *</label><input id="city" name="entry.780023695" type="text" autocomplete="address-level2" maxlength="100" required></div>
-          <div class="field"><label for="phone">Telefono <span class="optional">(facoltativo)</span></label><input id="phone" name="entry.887439823" type="tel" autocomplete="tel" maxlength="40"></div>
           <div class="field"><label for="email">Email *</label><input id="email" name="entry.890832068" type="email" inputmode="email" autocomplete="email" autocapitalize="none" spellcheck="false" maxlength="160" required><div id="emailHint" class="email-hint" aria-live="polite"></div></div>
           <div class="field"><label for="emailConfirm">Conferma email *</label><input id="emailConfirm" type="email" inputmode="email" autocomplete="email" autocapitalize="none" spellcheck="false" maxlength="160" required></div>
-          <div class="field full"><label for="source">Come ci hai trovato? *</label><input id="source" name="entry.493942246" type="text" maxlength="160" placeholder="Social, We Love UniCt, Rotaract, amici, ecc…" required></div>
+          <div class="field"><label for="phone">Telefono <span class="optional">(facoltativo)</span></label><input id="phone" name="entry.887439823" type="tel" autocomplete="tel" maxlength="40"></div>
+          <div class="field"><label for="source">Come ci hai trovato? *</label><input id="source" name="entry.493942246" type="text" maxlength="160" placeholder="Social, We Love UniCt, Rotaract, amici, ecc…" required></div>
           <div class="honeypot" aria-hidden="true"><label for="website">Website</label><input id="website" tabindex="-1" autocomplete="off"></div>
           <label class="check"><input id="privacy" name="entry.2078780319" type="checkbox" value="Opzione 1" required><span>Dichiaro di aver letto l'<a href="#privacy-policy" id="openPrivacy">informativa privacy</a> ai sensi dell'art. 13 del Regolamento (UE) 2016/679. *</span></label>
           <button id="submitRegistration" class="submit" type="submit">Invia registrazione</button>
