@@ -87,7 +87,7 @@ button,input,textarea,select{font:inherit}
 .form-wrap{padding:44px}
 form{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .field{display:grid;gap:8px}
-label{font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.1em}
+label{font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.1em}.optional{font-weight:500;text-transform:none;letter-spacing:0;color:var(--muted);font-size:10px}.email-hint{min-height:16px;font-size:11px;line-height:1.35;color:var(--muted);text-transform:none;letter-spacing:0}.email-hint.ok{color:#24633b;font-weight:700}.email-hint.warn{color:#9a5b00;font-weight:700}.email-hint.err{color:#a00000;font-weight:700}
 input,textarea,select{width:100%;min-height:52px;border:1.5px solid #111;background:#fff;color:#111;-webkit-text-fill-color:#111;color-scheme:light;padding:13px 14px;outline:none;border-radius:0}
 input::placeholder,textarea::placeholder{color:#777;-webkit-text-fill-color:#777;opacity:1}
 input[type="date"]{color:#111!important;-webkit-text-fill-color:#111!important;color-scheme:light!important}
@@ -136,39 +136,126 @@ footer{background:var(--teal);color:#fff;padding:38px 0 110px}
   .detail:nth-child(-n+2){border-bottom:1px solid rgba(0,0,0,.2)}
 }
 @media(max-width:760px){
-  .wrap{width:min(var(--max),calc(100% - 24px))}
-  .nav-inner{height:66px}
-  .nav-logo{width:160px}
-  .hero{padding:30px 0 38px}
-  .save-date{letter-spacing:.28em;font-size:14px;margin-bottom:22px}
-  .poster-card{padding:42px 20px 34px}
-  .date-line{font-size:15px;letter-spacing:.18em}
-  .time-line{letter-spacing:.16em}
-  .hero-title{font-size:clamp(62px,20vw,100px);margin:48px 0 38px}
-  .hero-sub{font-size:19px;letter-spacing:.06em;margin-bottom:28px}
+  html{scroll-padding-top:76px}
+  body{padding-bottom:calc(82px + env(safe-area-inset-bottom))}
+  .wrap{width:min(var(--max),calc(100% - 22px))}
+
+  .nav{box-shadow:0 5px 18px rgba(0,0,0,.07)}
+  .nav-inner{height:62px;gap:12px}
+  .nav-wordmark{font-size:17px;letter-spacing:.065em;white-space:nowrap}
+  .menu{margin-left:auto;gap:0}
+  .menu a:not(.nav-cta){display:none}
+  .nav-cta{
+    display:inline-flex!important;
+    align-items:center;
+    justify-content:center;
+    min-height:44px;
+    padding:0 15px;
+    font-size:11px;
+    letter-spacing:.07em;
+    opacity:1!important;
+    border:2px solid var(--teal);
+    box-shadow:0 4px 12px rgba(58,104,119,.18)
+  }
+
+  .hero{padding:24px 0 34px}
+  .save-date{letter-spacing:.24em;font-size:13px;margin-bottom:18px}
+  .poster-card{padding:34px 17px 28px;overflow:hidden}
+  .date-line{font-size:14px;letter-spacing:.15em;line-height:1.7}
+  .time-line{letter-spacing:.13em}
+  .hero-title{font-size:clamp(48px,15.2vw,72px);margin:38px 0 30px;letter-spacing:-.025em;line-height:.78;max-width:100%}.hero-title span{white-space:nowrap}
+  .hero-sub{font-size:17px;line-height:1.22;letter-spacing:.045em;margin-bottom:20px}
   .discount-grid{grid-template-columns:1fr}
-  .discount-card{min-height:0;padding:26px 8px}
+  .discount-card{min-height:0;padding:21px 8px}
   .discount-card + .discount-card{border-left:0;border-top:2px solid var(--line)}
-  .hero-rsvp{font-size:11px;letter-spacing:.08em;overflow-wrap:anywhere}
-  .section{padding:58px 0}
-  .section-head{display:block}
-  .section-note{text-align:left;margin-top:10px}
+  .discount-card .pct{font-size:58px}
+  .discount-card .desc{font-size:12px}
+  .hero-actions{margin-top:24px}
+  .hero-actions .btn{
+    width:100%;
+    min-height:58px;
+    font-size:13px;
+    letter-spacing:.07em;
+    box-shadow:0 8px 20px rgba(58,104,119,.18)
+  }
+  .rinascente-bottom{padding-top:28px}
+  .rinascente-word{font-size:29px}
+  .rinascente-place{font-size:12px;letter-spacing:.22em}
+
+  .section{padding:50px 0}
+  .section-head{display:block;margin-bottom:26px}
+  .section-title{font-size:40px}
+  .section-note{text-align:left;margin-top:8px}
   .details{grid-template-columns:1fr}
-  .detail{border-right:0!important;border-bottom:1px solid rgba(0,0,0,.2)!important}
+  .detail{padding:22px;border-right:0!important;border-bottom:1px solid rgba(0,0,0,.2)!important}
   .detail:last-child{border-bottom:0!important}
-  .sponsor-grid,.partner-grid{grid-template-columns:repeat(2,1fr);gap:12px 18px}
-  .logo-cell{height:100px}
-  .logo-cell img{max-height:74px}
-  .partner-grid .logo-cell{height:94px}
-  .partner-grid .logo-cell img{max-height:70px}
-  .registration-shell{grid-template-columns:1fr}
-  .reg-copy{min-height:0;padding:38px 24px}
-  .form-wrap{padding:30px 20px}
-  form{grid-template-columns:1fr}
+  .detail strong{font-size:18px}
+
+  .sponsor-grid,.partner-grid{grid-template-columns:repeat(2,1fr);gap:10px 14px}
+  .logo-cell{height:96px;padding:4px 6px}
+  .logo-cell img{max-height:72px}
+  .partner-grid .logo-cell{height:90px}
+  .partner-grid .logo-cell img{max-height:68px}
+
+  #registrazione{scroll-margin-top:74px}
+  .registration{padding:50px 0 34px}
+  .registration-shell{grid-template-columns:1fr;box-shadow:0 12px 30px rgba(0,0,0,.13)}
+  .reg-copy{min-height:0;padding:30px 22px}
+  .reg-copy h2{font-size:58px;margin:14px 0 18px}
+  .reg-copy p{font-size:16px;line-height:1.45}
+  .form-wrap{padding:26px 16px}
+  form{grid-template-columns:1fr;gap:16px}
   .check,.submit,.status,.success-box{grid-column:1}
+  label{font-size:12px}
+  input,textarea,select{min-height:56px;font-size:16px;padding:14px 13px}
+  .check{font-size:13px}
+  .check input{min-height:20px;width:20px;flex-basis:20px}
+  .submit{
+    min-height:62px;
+    font-size:14px;
+    letter-spacing:.07em;
+    box-shadow:0 8px 20px rgba(58,104,119,.2)
+  }
+
   .footer-inner{display:block}
   .footer-text{text-align:left;margin-top:14px}
-  .mobile-cta{display:block;position:fixed;left:12px;right:12px;bottom:12px;z-index:100;background:#111;color:#fff;text-align:center;padding:15px 18px;text-transform:uppercase;font-size:12px;font-weight:900;letter-spacing:.08em;box-shadow:0 12px 30px rgba(0,0,0,.22)}
+
+  .mobile-cta{
+    display:flex;
+    position:fixed;
+    left:10px;
+    right:10px;
+    bottom:calc(10px + env(safe-area-inset-bottom));
+    z-index:1000;
+    min-height:62px;
+    align-items:center;
+    justify-content:center;
+    background:#111;
+    color:#fff;
+    text-align:center;
+    padding:14px 52px 14px 18px;
+    text-transform:uppercase;
+    font-size:13px;
+    font-weight:900;
+    letter-spacing:.075em;
+    box-shadow:0 14px 34px rgba(0,0,0,.3);
+    transition:transform .22s ease,opacity .22s ease,visibility .22s ease;
+  }
+  .mobile-cta:after{
+    content:"→";
+    position:absolute;
+    right:20px;
+    top:50%;
+    transform:translateY(-52%);
+    font-size:23px;
+    line-height:1
+  }
+  .mobile-cta.is-hidden{
+    transform:translateY(calc(100% + 24px));
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none
+  }
 }
 </style>
 </head>
@@ -290,8 +377,9 @@ footer{background:var(--teal);color:#fff;padding:38px 0 110px}
           <div class="field"><label for="name">Nome *</label><input id="name" name="entry.1352401967" autocomplete="given-name" maxlength="80" required></div>
           <div class="field"><label for="surname">Cognome *</label><input id="surname" name="entry.1614632850" autocomplete="family-name" maxlength="80" required></div>
           <div class="field"><label for="birthdate">Data di nascita *</label><input id="birthdate" name="entry.1946050331" type="date" autocomplete="bday" required></div>
-          <div class="field"><label for="phone">Telefono *</label><input id="phone" name="entry.887439823" type="tel" autocomplete="tel" maxlength="40" required></div>
-          <div class="field"><label for="email">Email *</label><input id="email" name="entry.890832068" type="email" autocomplete="email" maxlength="160" required></div>
+          <div class="field"><label for="phone">Telefono <span class="optional">(facoltativo)</span></label><input id="phone" name="entry.887439823" type="tel" autocomplete="tel" maxlength="40"></div>
+          <div class="field"><label for="email">Email *</label><input id="email" name="entry.890832068" type="email" inputmode="email" autocomplete="email" autocapitalize="none" spellcheck="false" maxlength="160" required><div id="emailHint" class="email-hint" aria-live="polite"></div></div>
+          <div class="field"><label for="emailConfirm">Conferma email *</label><input id="emailConfirm" type="email" inputmode="email" autocomplete="email" autocapitalize="none" spellcheck="false" maxlength="160" required></div>
           <div class="field"><label for="source">Come ci hai trovato? *</label><input id="source" name="entry.493942246" type="text" maxlength="160" placeholder="Social, We Love UniCt, Rotaract, amici, ecc…" required></div>
           <div class="honeypot" aria-hidden="true"><label for="website">Website</label><input id="website" tabindex="-1" autocomplete="off"></div>
           <label class="check"><input id="privacy" name="entry.2078780319" type="checkbox" value="Opzione 1" required><span>Dichiaro di aver letto l'<a href="#privacy-policy" id="openPrivacy">informativa privacy</a> ai sensi dell'art. 13 del Regolamento (UE) 2016/679. *</span></label>
@@ -300,7 +388,7 @@ footer{background:var(--teal);color:#fff;padding:38px 0 110px}
           <div id="registrationSuccess" class="success-box" hidden>
             <div class="label">Registrazione inviata</div>
             <h3>Grazie per la registrazione</h3>
-            <p>La tua registrazione allo Shopping Event è stata ricevuta. Per eventuali comunicazioni relative all'evento, controlla email e WhatsApp.</p>
+            <p>La tua registrazione allo Shopping Event è stata ricevuta. Controlla la tua email per eventuali comunicazioni relative all'evento.</p>
           </div>
         </form>
       </div>
@@ -318,7 +406,7 @@ footer{background:var(--teal);color:#fff;padding:38px 0 110px}
     <div class="footer-text">Shopping Event<br>Giovedì 8 ottobre 2026 · 20:00 - 23:00</div>
   </div>
 </footer>
-<a class="mobile-cta" href="#registrazione">Registrati</a>
+<a class="mobile-cta" href="#registrazione" aria-label="Registrati allo Shopping Event">Registrati all’evento</a>
 
 <div id="privacyModal" class="privacy-modal" hidden role="dialog" aria-modal="true" aria-labelledby="privacyTitle">
   <div class="privacy-panel" id="privacy-policy">
@@ -330,7 +418,7 @@ footer{background:var(--teal);color:#fff;padding:38px 0 110px}
     <p>Il Titolare del trattamento è <strong>Associazione KEFI ODV</strong>, con sede in Via Gramignani 128, 95121 Catania. Contatti: <a href="mailto:info@associazionekefi.it">info@associazionekefi.it</a>; PEC <a href="mailto:associazionekefi@pec.it">associazionekefi@pec.it</a>; tel. +39 329 929 1208.</p>
 
     <h3>2. Dati trattati</h3>
-    <p>Attraverso il modulo vengono raccolti i dati forniti direttamente dall'interessato: nome, cognome, data di nascita, numero di telefono, indirizzo email e l'informazione relativa a come si è venuti a conoscenza dello Shopping Event. Non è richiesto l'inserimento di categorie particolari di dati personali ai sensi dell'art. 9 GDPR.</p>
+    <p>Attraverso il modulo vengono raccolti i dati forniti direttamente dall'interessato: nome, cognome, data di nascita, indirizzo email e l'informazione relativa a come si è venuti a conoscenza dello Shopping Event; il numero di telefono è raccolto solo se fornito facoltativamente dall'interessato. Non è richiesto l'inserimento di categorie particolari di dati personali ai sensi dell'art. 9 GDPR.</p>
 
     <h3>3. Finalità e basi giuridiche</h3>
     <ul>
@@ -340,7 +428,7 @@ footer{background:var(--teal);color:#fff;padding:38px 0 110px}
     </ul>
 
     <h3>4. Natura del conferimento</h3>
-    <p>Il conferimento dei campi contrassegnati come obbligatori è necessario per completare l'Registrazione e gestire la partecipazione. In mancanza dei dati obbligatori non sarà possibile completare l'invio del modulo.</p>
+    <p>Il conferimento dei campi contrassegnati come obbligatori, incluso l'indirizzo email, è necessario per completare la registrazione e gestire la partecipazione. Il numero di telefono è facoltativo. In mancanza dei dati obbligatori non sarà possibile completare l'invio del modulo.</p>
 
     <h3>5. Modalità del trattamento</h3>
     <p>I dati sono trattati con strumenti elettronici e, ove necessario, manualmente, adottando misure organizzative e tecniche adeguate. Il sito non effettua decisioni automatizzate ai sensi dell'art. 22 GDPR.</p>
@@ -367,6 +455,9 @@ footer{background:var(--teal);color:#fff;padding:38px 0 110px}
   const status = document.getElementById('formStatus');
   const success = document.getElementById('registrationSuccess');
   const website = document.getElementById('website');
+  const email = document.getElementById('email');
+  const emailConfirm = document.getElementById('emailConfirm');
+  const emailHint = document.getElementById('emailHint');
   let waitingForGoogle = false;
   let submitTimer = null;
 
@@ -404,27 +495,172 @@ footer{background:var(--teal);color:#fff;padding:38px 0 110px}
     }
   });
 
-  form.addEventListener('submit', e => {
+
+  const commonDomainTypos = {
+    'gmai.com':'gmail.com','gmial.com':'gmail.com','gmail.con':'gmail.com','gmail.co':'gmail.com',
+    'hotmal.com':'hotmail.com','hotmai.com':'hotmail.com','hotmail.con':'hotmail.com',
+    'outlok.com':'outlook.com','outloo.com':'outlook.com','outlook.con':'outlook.com',
+    'yahoo.con':'yahoo.com','yaho.com':'yahoo.com',
+    'icloud.con':'icloud.com','iclod.com':'icloud.com',
+    'libero.iy':'libero.it','libero.itt':'libero.it',
+    'virgilio.i':'virgilio.it','virgilio.itt':'virgilio.it'
+  };
+
+  function normalizeEmail(value) {
+    return (value || '').trim().toLowerCase();
+  }
+
+  function emailParts(value) {
+    const normalized = normalizeEmail(value);
+    const at = normalized.lastIndexOf('@');
+    if (at <= 0 || at !== normalized.indexOf('@') || at === normalized.length - 1) return null;
+    return { full: normalized, local: normalized.slice(0, at), domain: normalized.slice(at + 1) };
+  }
+
+  function isPlausibleEmail(value) {
+    const p = emailParts(value);
+    if (!p) return false;
+    if (p.full.length > 254 || p.local.length > 64) return false;
+    if (p.local.startsWith('.') || p.local.endsWith('.') || p.local.includes('..')) return false;
+    if (!/^[a-z0-9.!#$%&'*+/=?^_`{|}~-]+$/i.test(p.local)) return false;
+    if (p.domain.length > 253 || p.domain.includes('..')) return false;
+    const labels = p.domain.split('.');
+    if (labels.length < 2) return false;
+    if (labels.some(label => !label || label.length > 63 || label.startsWith('-') || label.endsWith('-') || !/^[a-z0-9-]+$/i.test(label))) return false;
+    const tld = labels[labels.length - 1];
+    if (!/^(?:[a-z]{2,63}|xn--[a-z0-9-]{2,59})$/i.test(tld)) return false;
+    return true;
+  }
+
+  function showEmailHint(message = '', kind = '') {
+    if (!emailHint) return;
+    emailHint.className = 'email-hint' + (kind ? ' ' + kind : '');
+    emailHint.textContent = message;
+  }
+
+  function validateEmailFields(showMessage = true) {
+    const value = normalizeEmail(email.value);
+    const confirmValue = normalizeEmail(emailConfirm.value);
+    email.value = value;
+    emailConfirm.value = confirmValue;
+
+    email.setCustomValidity('');
+    emailConfirm.setCustomValidity('');
+
+    if (!isPlausibleEmail(value)) {
+      email.setCustomValidity('Inserisci un indirizzo email valido.');
+      if (showMessage && value) showEmailHint('Controlla l’indirizzo: formato email non valido.', 'err');
+      return false;
+    }
+
+    const parts = emailParts(value);
+    const suggestion = parts && commonDomainTypos[parts.domain];
+    if (suggestion) {
+      const suggestedEmail = parts.local + '@' + suggestion;
+      email.setCustomValidity('Controlla il dominio dell’indirizzo email.');
+      if (showMessage) showEmailHint('Forse intendevi ' + suggestedEmail + '?', 'warn');
+      return false;
+    }
+
+    if (confirmValue && value !== confirmValue) {
+      emailConfirm.setCustomValidity('Le due email non coincidono.');
+      if (showMessage) showEmailHint('Le due email non coincidono.', 'err');
+      return false;
+    }
+
+    if (confirmValue && value === confirmValue && showMessage) {
+      showEmailHint('Email confermata.', 'ok');
+    } else if (showMessage) {
+      showEmailHint('');
+    }
+    return true;
+  }
+
+  async function domainExists(domain) {
+    // Best-effort DNS check. It verifies the domain, not the existence of the individual mailbox.
+    try {
+      const endpoint = 'https://dns.google/resolve?name=' + encodeURIComponent(domain) + '&type=MX';
+      const response = await fetch(endpoint, { method: 'GET', mode: 'cors', cache: 'no-store' });
+      if (!response.ok) return null;
+      const data = await response.json();
+      if (data.Status === 3) return false; // NXDOMAIN
+      if (Array.isArray(data.Answer) && data.Answer.length) return true;
+
+      // Some valid mail domains rely on an address record; verify domain existence as fallback.
+      const aResponse = await fetch('https://dns.google/resolve?name=' + encodeURIComponent(domain) + '&type=A', { method: 'GET', mode: 'cors', cache: 'no-store' });
+      if (!aResponse.ok) return null;
+      const aData = await aResponse.json();
+      if (aData.Status === 3) return false;
+      return Array.isArray(aData.Answer) && aData.Answer.length ? true : null;
+    } catch (_) {
+      return null; // Never break registration merely because the DNS service is unreachable.
+    }
+  }
+
+  email.addEventListener('input', () => validateEmailFields(false));
+  emailConfirm.addEventListener('input', () => validateEmailFields(false));
+  email.addEventListener('blur', async () => {
+    if (!validateEmailFields(true)) return;
+    const parts = emailParts(email.value);
+    if (!parts) return;
+    showEmailHint('Verifico il dominio dell’email…');
+    const exists = await domainExists(parts.domain);
+    if (exists === false) {
+      email.setCustomValidity('Il dominio email non sembra esistere.');
+      showEmailHint('Il dominio dopo @ non sembra esistere. Controlla l’indirizzo.', 'err');
+    } else if (exists === true) {
+      email.setCustomValidity('');
+      if (normalizeEmail(emailConfirm.value) === normalizeEmail(email.value) && emailConfirm.value) {
+        showEmailHint('Email confermata e dominio verificato.', 'ok');
+      } else {
+        showEmailHint('Dominio email verificato.');
+      }
+    } else {
+      email.setCustomValidity('');
+      showEmailHint('');
+    }
+  });
+
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
     status.className = 'status';
     status.textContent = '';
     success.hidden = true;
 
     if (website.value) {
-      e.preventDefault();
       status.className = 'status err';
       status.textContent = 'Invio non riuscito. Riprova.';
       return;
     }
-    if (!form.checkValidity()) {
-      e.preventDefault();
+
+    if (!validateEmailFields(true) || !form.checkValidity()) {
       form.reportValidity();
       return;
+    }
+
+    const parts = emailParts(email.value);
+    if (parts) {
+      submit.disabled = true;
+      submit.textContent = 'Verifico email…';
+      const exists = await domainExists(parts.domain);
+      if (exists === false) {
+        email.setCustomValidity('Il dominio email non sembra esistere.');
+        showEmailHint('Il dominio dopo @ non sembra esistere. Controlla l’indirizzo.', 'err');
+        submit.disabled = false;
+        submit.textContent = 'Invia registrazione';
+        email.reportValidity();
+        return;
+      }
+      email.setCustomValidity('');
     }
 
     waitingForGoogle = true;
     submit.disabled = true;
     submit.textContent = 'Invio in corso…';
     status.textContent = 'Sto inviando la registrazione…';
+
+    // Uses the existing Google Forms action/target; the checker does not change the storage system.
+    HTMLFormElement.prototype.submit.call(form);
 
     clearTimeout(submitTimer);
     submitTimer = setTimeout(() => {
@@ -436,6 +672,17 @@ footer{background:var(--teal);color:#fff;padding:38px 0 110px}
       status.textContent = 'L’invio sta impiegando troppo tempo. Riprova tra qualche istante.';
     }, 15000);
   });
+
+  const mobileCta = document.querySelector('.mobile-cta');
+  const registrationSection = document.getElementById('registrazione');
+  if (mobileCta && registrationSection && 'IntersectionObserver' in window) {
+    const ctaObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        mobileCta.classList.toggle('is-hidden', entry.isIntersecting);
+      });
+    }, { threshold: 0.08 });
+    ctaObserver.observe(registrationSection);
+  }
 
   iframe.addEventListener('load', () => {
     if (!waitingForGoogle) return;
