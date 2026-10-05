@@ -71,13 +71,13 @@ button,input,textarea,select{font:inherit}
 
 .logo-grid{display:flex;flex-wrap:wrap;justify-content:center;align-items:center}
 .sponsor-grid{gap:18px 26px}
-.partner-grid{gap:14px 18px}
+.partner-grid{gap:18px 26px}
 .logo-cell{display:flex;align-items:center;justify-content:center;padding:4px 8px}
 .sponsor-grid .logo-cell{flex:0 1 205px;max-width:205px;height:128px}
-.partner-grid .logo-cell{flex:0 1 158px;max-width:158px;height:104px}
+.partner-grid .logo-cell{flex:0 1 300px;max-width:300px;height:128px}
 .logo-cell img{display:block;max-width:100%;object-fit:contain}
 .sponsor-grid .logo-cell img{max-height:calc(88px * var(--s))}
-.partner-grid .logo-cell img{max-height:calc(70px * var(--s))}
+.partner-grid .logo-cell img{max-height:calc(88px * var(--s))}
 
 .registration{background:var(--teal);padding:82px 0}
 .registration-shell{display:grid;grid-template-columns:.85fr 1.15fr;background:#fff;box-shadow:0 18px 50px rgba(0,0,0,.14)}
@@ -134,9 +134,9 @@ footer{background:var(--teal);color:#fff;padding:38px 0 110px}
   .sponsor-grid{gap:16px 20px}
   .sponsor-grid .logo-cell{flex-basis:190px;max-width:190px;height:118px}
   .sponsor-grid .logo-cell img{max-height:calc(82px * var(--s))}
-  .partner-grid{gap:14px 14px}
-  .partner-grid .logo-cell{flex-basis:150px;max-width:150px;height:98px}
-  .partner-grid .logo-cell img{max-height:calc(66px * var(--s))}
+  .partner-grid{gap:16px 20px}
+  .partner-grid .logo-cell{flex-basis:220px;max-width:220px;height:116px}
+  .partner-grid .logo-cell img{max-height:calc(82px * var(--s))}
   .details{grid-template-columns:repeat(2,1fr)}
   .detail:nth-child(2){border-right:0}
   .detail:nth-child(-n+2){border-bottom:1px solid rgba(0,0,0,.2)}
@@ -200,8 +200,8 @@ footer{background:var(--teal);color:#fff;padding:38px 0 110px}
   .sponsor-grid,.partner-grid{gap:10px 12px}
   .sponsor-grid .logo-cell{flex:1 1 calc(50% - 12px);max-width:calc(50% - 6px);min-width:140px;height:96px;padding:4px 6px}
   .sponsor-grid .logo-cell img{max-height:calc(66px * var(--s))}
-  .partner-grid .logo-cell{flex:1 1 calc(50% - 12px);max-width:calc(50% - 6px);min-width:136px;height:88px;padding:4px 6px}
-  .partner-grid .logo-cell img{max-height:calc(60px * var(--s))}
+  .partner-grid .logo-cell{flex:1 1 calc(50% - 12px);max-width:calc(50% - 6px);min-width:136px;height:96px;padding:4px 6px}
+  .partner-grid .logo-cell img{max-height:calc(66px * var(--s))}
 
   #registrazione{scroll-margin-top:74px}
   .registration{padding:50px 0 34px}
@@ -440,6 +440,7 @@ footer{background:var(--teal);color:#fff;padding:38px 0 110px}
           <div class="field"><label for="name">Nome *</label><input id="name" name="entry.1352401967" autocomplete="given-name" maxlength="80" required></div>
           <div class="field"><label for="surname">Cognome *</label><input id="surname" name="entry.1614632850" autocomplete="family-name" maxlength="80" required></div>
           <div class="field"><label for="birthdate">Data di nascita *</label><input id="birthdate" name="entry.1946050331" type="date" autocomplete="bday" required></div>
+          <div class="field"><label for="city">Città *</label><input id="city" name="entry.780023695" type="text" autocomplete="address-level2" maxlength="100" required></div>
           <div class="field"><label for="phone">Telefono <span class="optional">(facoltativo)</span></label><input id="phone" name="entry.887439823" type="tel" autocomplete="tel" maxlength="40"></div>
           <div class="field"><label for="email">Email *</label><input id="email" name="entry.890832068" type="email" inputmode="email" autocomplete="email" autocapitalize="none" spellcheck="false" maxlength="160" required><div id="emailHint" class="email-hint" aria-live="polite"></div></div>
           <div class="field"><label for="emailConfirm">Conferma email *</label><input id="emailConfirm" type="email" inputmode="email" autocomplete="email" autocapitalize="none" spellcheck="false" maxlength="160" required></div>
@@ -482,13 +483,13 @@ footer{background:var(--teal);color:#fff;padding:38px 0 110px}
     <p>Il Titolare del trattamento è <strong>Associazione KEFI ODV</strong>, con sede in Via Gramignani 128, 95121 Catania. Contatti: <a href="mailto:info@associazionekefi.it">info@associazionekefi.it</a>; PEC <a href="mailto:associazionekefi@pec.it">associazionekefi@pec.it</a>; tel. +39 329 929 1208.</p>
 
     <h3>2. Dati trattati</h3>
-    <p>Attraverso il modulo vengono raccolti i dati forniti direttamente dall'interessato: nome, cognome, data di nascita, indirizzo email e l'informazione relativa a come si è venuti a conoscenza dello Shopping Event; il numero di telefono è raccolto solo se fornito facoltativamente dall'interessato. Non è richiesto l'inserimento di categorie particolari di dati personali ai sensi dell'art. 9 GDPR.</p>
+    <p>Attraverso il modulo vengono raccolti i dati forniti direttamente dall'interessato: nome, cognome, data di nascita, città, indirizzo email e l'informazione relativa a come si è venuti a conoscenza dello Shopping Event; il numero di telefono è raccolto solo se fornito facoltativamente dall'interessato. Non è richiesto l'inserimento di categorie particolari di dati personali ai sensi dell'art. 9 GDPR.</p>
 
     <h3>3. Finalità e basi giuridiche</h3>
     <ul>
       <li><strong>Gestione dell'Registrazione e della partecipazione:</strong> ricezione della registrazione, gestione degli accessi e comunicazioni organizzative connesse all'evento, ai sensi dell'art. 6, par. 1, lett. b) GDPR.</li>
       <li><strong>Organizzazione e sicurezza dell'evento:</strong> i dati strettamente necessari possono essere trattati per esigenze organizzative e tutela di persone e beni, sulla base del legittimo interesse del Titolare ai sensi dell'art. 6, par. 1, lett. f) GDPR.</li>
-      <li><strong>Analisi della provenienza delle registrazioni:</strong> la risposta alla domanda “Come ci hai trovato?” è utilizzata per comprendere l'efficacia dei canali di comunicazione e produrre statistiche interne, preferibilmente in forma aggregata, sulla base del legittimo interesse del Titolare.</li>
+      <li><strong>Analisi della provenienza delle registrazioni:</strong> la città indicata e la risposta alla domanda “Come ci hai trovato?” sono utilizzate per comprendere la provenienza geografica dei partecipanti, l'efficacia dei canali di comunicazione e produrre statistiche interne, preferibilmente in forma aggregata, sulla base del legittimo interesse del Titolare.</li>
     </ul>
 
     <h3>4. Natura del conferimento</h3>
