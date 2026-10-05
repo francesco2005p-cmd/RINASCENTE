@@ -263,6 +263,62 @@ footer{background:var(--teal);color:#fff;padding:38px 0 110px}
     pointer-events:none
   }
 }
+
+/* Animazioni leggere: non modificano font, dimensioni, colori o struttura */
+@keyframes softFadeUp{
+  from{opacity:0;transform:translateY(14px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@keyframes softPulseCta{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.015)}
+}
+@keyframes softLogoFloat{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-3px)}
+}
+
+.hero .save-date{animation:softFadeUp .6s ease both}
+.hero .poster-card{animation:softFadeUp .7s ease .08s both}
+.hero .rinascente-bottom{animation:softFadeUp .7s ease .16s both}
+
+.logo-cell img{
+  transition:transform .22s ease, filter .22s ease;
+}
+.logo-cell:hover img{
+  transform:translateY(-3px) scale(1.02);
+  filter:drop-shadow(0 5px 8px rgba(0,0,0,.08));
+}
+
+.nav-cta,
+.hero-actions .btn,
+.submit{
+  transition:transform .18s ease, box-shadow .18s ease;
+}
+.nav-cta:hover,
+.hero-actions .btn:hover,
+.submit:hover:not(:disabled){
+  transform:translateY(-2px);
+}
+
+.mobile-cta{
+  animation:softPulseCta 2.8s ease-in-out infinite;
+}
+
+.success-box{
+  animation:softFadeUp .4s ease both;
+}
+.success-note{
+  margin-top:14px!important;
+}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{
+    animation:none!important;
+    transition:none!important;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -374,7 +430,7 @@ footer{background:var(--teal);color:#fff;padding:38px 0 110px}
         <div>
           <div class="overline">Giovedì 8 ottobre · 20:00 - 23:00</div>
           <h2>Registrati</h2>
-          <p>Compila il form per registrare la tua partecipazione allo Shopping Event di Rinascente Catania.</p>
+          <p>Compila il form per registrare la tua partecipazione allo Shopping Event di Rinascente Catania.<br><br><strong>Per partecipare all'evento è NECESSARIO ricevere conferma di partecipazione.<br>Senza messaggio o email, NON sarà possibile accedere alla serata.</strong></p>
         </div>
       </div>
       <div class="form-wrap">
@@ -394,8 +450,9 @@ footer{background:var(--teal);color:#fff;padding:38px 0 110px}
           <div id="formStatus" class="status" role="status" aria-live="polite"></div>
           <div id="registrationSuccess" class="success-box" hidden>
             <div class="label">Registrazione inviata</div>
-            <h3>Grazie per la registrazione</h3>
-            <p>La tua registrazione allo Shopping Event è stata ricevuta. Controlla la tua email per eventuali comunicazioni relative all'evento.</p>
+            <h3>Grazie per aver inviato la tua registrazione.</h3>
+            <p>Attendi conferma di partecipazione per sapere se sei stato inserito in lista nominale.</p>
+            <p class="success-note"><strong>NB: Per partecipare all'evento è NECESSARIO ricevere conferma di partecipazione.<br>Senza messaggio o email, NON sarà possibile accedere alla serata.</strong></p>
           </div>
         </form>
       </div>
